@@ -1,16 +1,17 @@
 'use strict'
 
 const btn = document.querySelector('#btn');
-const input = document.querySelector('#input').value;
+const input = document.querySelector('#input');
 const clueBox = document.querySelector('#clue');
 const attemptsBox = document.querySelector('#attempts');
+const personNumber = parseInt(input.value)
 
 
 function increaseAttempts() {
-    let attempts = parseInt(attemptsBox.innerHTMl);
+    let attempts = 0;
     attempts = attempts + 1;
     attemptsBox.innerHTML = attempts;
-    console.log('holaaaaaa')
+
 }
 
 
@@ -21,32 +22,27 @@ function getRandomNumber(max) {
 const randomNumber = getRandomNumber(100);
 
 function createClue() {
-    if (input.value === randomNumber) {
-        clueBox.innerHTML = '¡Has acertado campeona!'
-        alert: '¡¡ HAS ACERTADO  CAMPEONA!!';
+    if (personNumber === randomNumber) {
+        clueBox.innerHTML = '¡Has acertado campeona!';
+
     }
-    if (input.value > randomNumber.value) {
+    if (personNumber > randomNumber) {
         clueBox.innerHTML = 'Demasiado alto';
     }
-    if (input.value < randomNumber.value) {
+    if (personNumber < randomNumber) {
         clueBox.innerHTML = 'Demasiado bajo';
     }
 }
 
 function clickButton() {
     console.log(randomNumber)
-    increaseAttempts()
     console.log(input.value);
-
-
+    createClue()
+    increaseAttempts()
 }
-
+console.log(typeof (randomNumber))
+console.log(typeof (personNumber))
 
 btn.addEventListener('click', clickButton);
 
 
-/*function increaseProductQuantity() {
-    let productQuantity = parseInt(elementWrapperCart.innerHTML);
-    productQuantity = productQuantity + 1;
-    elementWrapperCart.innerHTML = productQuantity;
-  }*/
