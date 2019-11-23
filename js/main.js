@@ -4,45 +4,41 @@ const btn = document.querySelector('#btn');
 const input = document.querySelector('#input');
 const clueBox = document.querySelector('#clue');
 const attemptsBox = document.querySelector('#attempts');
-const personNumber = parseInt(input.value)
-
-
-function increaseAttempts() {
-    let attempts = 0;
+let attempts = 0;
+const increaseAttempts = () => {
     attempts = attempts + 1;
-    attemptsBox.innerHTML = attempts;
-
+    attemptsBox.innerHTML = `Número de intentos: ${attempts}`;
 }
-
-
-function getRandomNumber(max) {
+const getRandomNumber = (max) => {
     return Math.ceil(Math.random() * max);
 }
-
 const randomNumber = getRandomNumber(100);
+const maxNumber = 100;
+const addText = (content) => { clueBox.innerHtml = content }
 
-function createClue() {
-    if (personNumber === randomNumber) {
-        clueBox.innerHTML = '¡Has acertado campeona!';
+const createClue = () => {
 
+
+    if (input.value > maxNumber || input.value <= 0 || input.value == '') {
+        clueBox.innerHTML = 'Introduce un número válido 🧐');
     }
-    if (personNumber > randomNumber) {
-        clueBox.innerHTML = 'Demasiado alto';
-    }
-    if (personNumber < randomNumber) {
+    else if (input.value < randomNumber) {
         clueBox.innerHTML = 'Demasiado bajo';
     }
+    else if (input.value > randomNumber) {
+        clueBox.innerHTML = 'Demasiado alto';
+    }
+    else {
+        clueBox.innerHTML = '🎉¡Has acertado Campeona!🎉';
+    }
 }
-
-function clickButton() {
-    console.log(randomNumber)
+const clickButton = () => {
+    console.log(randomNumber);
     console.log(input.value);
-    createClue()
-    increaseAttempts()
+    createClue();
+    increaseAttempts();
 }
-console.log(typeof (randomNumber))
-console.log(typeof (personNumber))
-
+window.addEventListener('load', getRandomNumber)
 btn.addEventListener('click', clickButton);
 
 

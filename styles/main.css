@@ -1,17 +1,50 @@
+* {
+    margin-left: 0px;
+    box-sizing: border-box;
+    background-color: rgb(112, 236, 230);
+}
+.wrapper {
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.header {
+    background-image: url("numbers.jpg") ;
+    height: 150px;
+    width: 100vw;
+    background-size: cover;
+}
 .btn {
+    cursor: pointer;
     background-color: purple;
-    border-radius: 7px;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
 }
-.clue-wrapper {
+.clue{
+    font-size: 18px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
     margin-top: 20px;
     border: 1px solid blue;
-    height: 20px;
     width: 80%;
 }
-.attempts-wrapper{
+.attempts{
+    font-size: 18px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
     margin-top: 20px;
     border: 1px solid blue;
-    height: 20px;
     width: 80%;
+}
+.title {
+    color: purple;
+    font-size: 30px;
+}
+.input {
+    background-color: white;
+    padding: 10px;
+    border: none;
+    border: 1px solid grey;
 }

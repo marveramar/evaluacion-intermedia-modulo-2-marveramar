@@ -10,17 +10,16 @@
 </head>
 
 <body>
+    <header class="header"></header>
     <main class="wrapper">
         <h1 class="title"> Adivina el número</h1>
         <form class="form">
-            <label class="label">Introduce aquí tu número</label>
+            <label class="label" for="input">Introduce aquí tu número</label>
             <input type="number" class="input" id="input">
             <button type="button" class="btn" id="btn">Prueba</button>
         </form>
-        <div class="clue-wrapper">
-            <span id="clue">Pista: escribe el número y dale a Prueba</span>
-        </div>
-        <div class="attempts-wrapper"> Numero de intentos: <span class="attempts" id="attempts">0</span></div>
+        <p class="clue" id="clue">Pista: escribe el número y dale a Prueba</p>
+        <p class="attempts" id="attempts">Numero de intentos:0</p>
     </main>
     <script src="./js/main.js"></script>
 </body>
