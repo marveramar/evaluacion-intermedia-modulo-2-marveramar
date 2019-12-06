@@ -4,6 +4,7 @@ const btn = document.querySelector('#btn');
 const input = document.querySelector('#input');
 const clueBox = document.querySelector('#clue');
 const attemptsBox = document.querySelector('#attempts');
+const form = document.querySelector('.form');
 let attempts = 0;
 const increaseAttempts = () => {
     attempts = attempts + 1;
@@ -20,7 +21,7 @@ const createClue = () => {
 
 
     if (input.value > maxNumber || input.value <= 0 || input.value == '') {
-        clueBox.innerHTML = 'Introduce un número válido 🧐');
+        clueBox.innerHTML = 'Introduce un número válido 🧐';
     }
     else if (input.value < randomNumber) {
         clueBox.innerHTML = 'Demasiado bajo';
@@ -38,6 +39,12 @@ const clickButton = () => {
     createClue();
     increaseAttempts();
 }
+
+const enterKeyHandler = (event) => {
+    event.preventDefault();
+    clickButton();
+}
+form.addEventListener('submit', enterKeyHandler);
 window.addEventListener('load', getRandomNumber)
 btn.addEventListener('click', clickButton);
 
